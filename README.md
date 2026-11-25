@@ -6,18 +6,18 @@
 
 | 게임 | 바로가기 |
 |---|---|
-| 테트리스 | https://leebong-su.github.io/arcade/tetris/ |
+| 블록 쌓기 | https://leebong-su.github.io/arcade/blocks/ |
 | 벽돌깨기 | https://leebong-su.github.io/arcade/breakout/ |
 
 최고 점수는 게임별로 브라우저(localStorage)에 저장되고 허브 화면에도 표시된다.
 
-## 테트리스 (`tetris/`)
+## 블록 쌓기 (`blocks/`)
 
-가이드라인 규칙을 따르는 정통 테트리스.
+떨어지는 블록으로 줄을 채워 지우는 퍼즐. 현대 블록 퍼즐의 표준 규칙을 따른다.
 
 - **SRS 회전**과 월킥, 7-bag 랜덤, 홀드, 고스트, 다음 블록 5개 미리보기
 - 고정 유예 0.5초(바닥에서 움직이면 리셋, 최대 15회)
-- 점수: 싱글 100 / 더블 300 / 트리플 500 / 테트리스 800 × 레벨
+- 점수: 싱글 100 / 더블 300 / 트리플 500 / 4줄(QUAD) 800 × 레벨
 - **T-스핀**(3-코너 규칙, 미니 구분), **백투백** ×1.5, 콤보, 퍼펙트 클리어 보너스
 - 10줄마다 레벨업, 레벨 20까지 낙하 속도 증가
 
@@ -53,7 +53,7 @@
 
 ```
 index.html          # 허브 (게임 목록)
-tetris/index.html   # 테트리스 (Canvas 2D + WebAudio, 파일 하나)
+blocks/index.html   # 블록 쌓기 (Canvas 2D + WebAudio, 파일 하나)
 breakout/index.html # 벽돌깨기 (Canvas 2D + WebAudio, 파일 하나)
 ```
 
@@ -69,4 +69,4 @@ python3 -m http.server 8000
 
 - 공통: `?auto`(자동 플레이, 점수 저장 안 함), `&ts=4`(배속, 최대 8)
 - 벽돌깨기: `&level=N`(시작 레벨)
-- 테트리스: `?debug`(회전·T-스핀 검증용 `window.__tdbg`)
+- 블록 쌓기: `?debug`(회전·T-스핀 검증용 `window.__tdbg`)
